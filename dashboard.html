@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" ng-app="dashboardViewer">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <title>DashBoard App</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.js"></script>
+  <script src="appModule.js"></script>
+  <script src="dashboardController.js"></script>
+</head>
+
+<!-- <body style="background-color:powderblue"> -->
+
+<body>
+  <div class="container-fluid">
+    <nav class="navbar btn-dark">
+      <a class="navbar-brand">RBS Dashboard</a>
+    </nav>
+  </div>
+  <div ng-controller="DashboardController"  class="container" style="padding:0%;padding-top:50px">
+    <div class="row align-items-start justify-content-center" style="padding:5px">
+
+      <!-- The Dashboard Main Data -->
+      <div class="col-3 border border-success rounded" style="height:600px">
+        <form name="searchUser" ng-submit="search(username)">
+          <h3>
+            <label for="search">GitHub User</label>
+          </h3>
+          <div class="form-inline">
+            <input type="text" ng-model="username" class="form-control" required style="width:150px">
+            <button class="btn btn-submit btn-success">Search</button>
+          </div>
+        </form>
+        </br>
+        <div class="list-group" ng-show="user">
+          <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Name : {{user.name}}</a>
+          <!-- <img src="{{user.avatar_url}}" class="rounded-circle" style="height:175px"> -->
+          <a href="#" class="list-group-item list-group-item-action list-group-item-warning" style="word-wrap: break-word">Customer Type : {{user.customerType}}</a>
+          <a href="#" class="list-group-item list-group-item-action list-group-item-danger" style="word-wrap: break-word">Address : {{user.address}}</a>
+        </div>
+      </div>
+
+      <div class="col-8" style="padding:5px">
+        <div>
+          <div class="row align-items-center justify-content-center">
+            <div class="col-8 border border-success rounded" style="height:300px;padding:5px">
+             <!-- <div ng-include="'repos.html'"></div> -->
+            </div>
+            <div style="width:10px"></div>
+            <!-- <div class=" col-4  border border-success rounded" style="height:300px;padding:10px">
+              Three
+            </div> -->
+          </div>
+
+          <div class="row" style="height:20px"></div>
+          <div class="row align-items-center justify-content-center">
+            <div class="col-8 border border-success rounded " style="height:300px;padding:5px">
+             
+            </div>
+            <div style="width:10px"></div>
+            <!-- <div class=" col-4  border border-success rounded" style="height:300px;padding:10px">
+              Three
+            </div> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+964DzO0rT7abK41JStQIAqVgRVzpbzo4smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ4stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
